@@ -4,7 +4,7 @@ Rohan Bookmarklet
 What is the Rohan Bookmarklet?
 --------------------------
 
-An in-browser script to recommend a random manga from MangaUpdates.
+An in-browser script to suggest a random manga from MangaUpdate, based on a query.
 
 Installation
 ------------
