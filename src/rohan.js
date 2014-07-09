@@ -7,7 +7,7 @@ var iframe = document.createElement("IFRAME");
 iframe.style.display = "none";
 document.body.appendChild(iframe);
 iframe.src = getRandomPage();
-//console.log(randomPage());
+
 console.log(iframe.contentWindow.document.innerHTML);
 
 var inter = window.setInterval(function() {
@@ -18,6 +18,7 @@ var inter = window.setInterval(function() {
 }, 100);
 
 function getRandomPage(){
+	console.log(window.location.href.replace(/page=\d+/, "page=" + randomPage).replace(/perpage=\d+/, "perpage=100"));
     return window.location.href.replace(/page=\d+/, "page=" + randomPage).replace(/perpage=\d+/, "perpage=100");
 }
 
