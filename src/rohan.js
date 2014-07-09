@@ -19,7 +19,7 @@ var inter = window.setInterval(function() {
 
 function getRandomPage(){
 	console.log(window.location.href.replace(/page=\d+/, "page=" + randomPage).replace(/perpage=\d+/, "perpage=100"));
-    return window.location.href.replace(/page=\d+/, "page=" + randomPage).replace(/perpage=\d+/, "perpage=100");
+    setTimeout(return window.location.href.replace(/page=\d+/, "page=" + randomPage).replace(/perpage=\d+/, "perpage=100"), 10000);
 }
 
 function getRandomManga(){
