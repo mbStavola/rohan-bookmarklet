@@ -1,10 +1,6 @@
 Rohan Bookmarklet
 =================
 
-
-----------
-
-
 What is the Rohan Bookmarklet?
 --------------------------
 
