@@ -7,7 +7,7 @@ var iframe = document.createElement("IFRAME");
 iframe.style.display = "none";
 document.body.appendChild(iframe);
 iframe.src = getRandomPage();
-console.log(randomPage());
+//console.log(randomPage());
 console.log(iframe.contentWindow.document.innerHTML);
 
 var inter = window.setInterval(function() {
