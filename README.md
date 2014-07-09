@@ -8,7 +8,8 @@ An in-browser script to suggest a random manga from MangaUpdate, based on a quer
 
 Installation
 ------------
-Simply right click [this link][1] and add it to your bookmarks.
+Simply add this code to your bookmarks:  
+ `javascript:(function(){document.body.appendChild(document.createElement('script')).src='https://raw.githubusercontent.com/mbStavola/rohan-bookmarklet/master/src/rohan.js';})()`;
 
 Usage
 -----
@@ -24,5 +25,3 @@ Usage
 
  3. Open the bookmarklet and enjoy!
 
-
-  [1]: javascript:var%20q%20=%20document.createElement%28%27script%27%29;q.src=%27https://raw.githubusercontent.com/mbStavola/rohan-bookmarklet/master/src/rohan.js%27;document.body.appendChild%28q%29;void%200;
