@@ -1,11 +1,14 @@
 var numberOfPages = document.querySelector("td.specialtext:nth-child(2) > a:nth-child(6)").href.match(/page=\d+/)[0].match(/\d+/)[0];
-
+console.log(numberOfPages);
 var randomPage = Math.floor(Math.random() * numberOfPages) + 1;
+console.log(randomPage);
 
 var iframe = document.createElement("IFRAME");
 iframe.style.display = "none";
 document.body.appendChild(iframe);
 iframe.src = getRandomPage();
+console.log(randomPage());
+console.log(iframe.contentWindow.document.innerHTML);
 
 var inter = window.setInterval(function() {
     if (iframe.contentWindow.document.readyState === "complete") {
@@ -20,6 +23,6 @@ function getRandomPage(){
 
 function getRandomManga(){
     var links = iframe.contentWindow.document.querySelectorAll("a[alt='Series Info']");
-    console.log("h");
+    console.log(links);
     window.location.href = links[Math.floor((Math.random() * links.length))];
 }
