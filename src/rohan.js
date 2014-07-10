@@ -1,3 +1,4 @@
+debugger;
 var numberOfPages = document.querySelector("td.specialtext:nth-child(2) > a:nth-child(6)").href.match(/page=\d+/)[0].match(/\d+/)[0];
 console.log(numberOfPages);
 var randomPage = Math.floor(Math.random() * numberOfPages) + 1;
