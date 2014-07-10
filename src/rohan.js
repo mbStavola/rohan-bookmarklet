@@ -14,7 +14,7 @@ console.log(iframe.contentWindow.document.innerHTML);
 var inter = window.setInterval(function() {
     if (iframe.contentWindow.document.readyState === "complete") {
       window.clearInterval(inter);
-      getRandomManga();
+      setTimeout(getRandomManga, 50000);
     }
 }, 100);
 
