@@ -9,6 +9,7 @@ document.body.appendChild(iframe);
 iframe.src = getRandomPage();
 
 debugger;
+console.log(iframe.src);
 console.log(getRandomPage());
 console.log(iframe.contentWindow.document.innerHTML);
 
