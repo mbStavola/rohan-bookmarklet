@@ -8,13 +8,15 @@ iframe.style.display = "none";
 document.body.appendChild(iframe);
 iframe.src = getRandomPage();
 
+debugger;
 console.log(getRandomPage());
 console.log(iframe.contentWindow.document.innerHTML);
 
 var inter = window.setInterval(function() {
     if (iframe.contentWindow.document.readyState === "complete") {
       window.clearInterval(inter);
-      setTimeout(getRandomManga, 50000);
+      debugger;
+      getRandomManga();
     }
 }, 100);
 
@@ -24,6 +26,7 @@ function getRandomPage(){
 
 function getRandomManga(){
     var links = iframe.contentWindow.document.querySelectorAll("a[alt='Series Info']");
+    debugger;
     console.log(links);
     window.location.href = links[Math.floor((Math.random() * links.length))];
 }
