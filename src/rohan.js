@@ -5,7 +5,7 @@ var randomPage = Math.floor(Math.random() * numberOfPages) + 1;
 var iframe = document.createElement("IFRAME");
 iframe.style.display = "none";
 document.body.appendChild(iframe);
-setTimeout(function(){iframe.src = getRandomPage();}, 5000);
+setTimeout(function(){iframe.src = getRandomPage()}, 5000);
 
 var inter = window.setInterval(function() {
     if (iframe.contentWindow.document.readyState === "complete") {
