@@ -8,7 +8,13 @@ var doc = parser.parseFromString(getRandomPage(), "text/xml");
 getRandomManga(doc);
 
 function getRandomPage(){
-    return httpGet(window.location.href.replace(/page=\d+/, "page=" + randomPage).replace(/perpage=\d+/, "perpage=100"));
+    var resultURL = window.location.href.replace(/perpage=\d+/, "perpage=100");
+    if(resultURL.indexOf("?page=") > -1 || resultURL.indexOf("&page=") > -1 ) {
+        return httpGet(resultURL.replace(/page=\d+/, "page=" + randomPage));
+    }
+    else {
+        return httpGet(resultURL + "&page=" + randomPage);
+    }
 }
 
 function getRandomManga(doc){
