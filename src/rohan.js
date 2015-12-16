@@ -7,36 +7,38 @@ var doc = parser.parseFromString(getRandomPage(), "text/xml");
 
 getRandomManga(doc);
 
-function getRandomPage(){
-    var resultURL = window.location.href.replace(/perpage=\d+/, "perpage=100");
+function getRandomPage() {
+    var resultURL = window.location.href;
+
     if(resultURL.indexOf("?page=") > -1 || resultURL.indexOf("&page=") > -1 ) {
-        return httpGet(resultURL.replace(/page=\d+/, "page=" + randomPage));
+        resultURL = resultURL.replace(/page=\d+/, "page=" + randomPage));
+    } else {
+        resultURL = resultURL + "&page=" + randomPage);
     }
-    else {
-        return httpGet(resultURL + "&page=" + randomPage);
-    }
+
+    return httpGet(resultURL);
 }
 
-function getRandomManga(doc){
+function getRandomManga(doc) {
     var links = doc.querySelectorAll("a[alt='Series Info']");
-    console.log(links);
     window.location.href = links[Math.floor((Math.random() * links.length))];
 }
 
-function httpGet(theUrl){
+function httpGet(url) {
     if (window.XMLHttpRequest) {
         // code for IE7+, Firefox, Chrome, Opera, Safari
-        xmlhttp=new XMLHttpRequest();
-    }
-    else {
+        xmlhttp = new XMLHttpRequest();
+    } else {
         // code for IE6, IE5
-        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
     }
-    xmlhttp.onreadystatechange=function() {
-        if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+
+    xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             return xmlhttp.responseText;
         }
     }
-    xmlhttp.open("GET", theUrl, false);
+
+    xmlhttp.open("GET", url, false);
     xmlhttp.send();
 }
