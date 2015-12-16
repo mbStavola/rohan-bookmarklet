@@ -11,7 +11,7 @@ function getRandomPage() {
     var resultURL = window.location.href;
 
     if(resultURL.indexOf("?page=") > -1 || resultURL.indexOf("&page=") > -1 ) {
-        resultURL = resultURL.replace(/page=\d+/, "page=" + randomPage));
+        resultURL = resultURL.replace(/page=\d+/, "page=" + randomPage);
     } else {
         resultURL = resultURL + "&page=" + randomPage);
     }
