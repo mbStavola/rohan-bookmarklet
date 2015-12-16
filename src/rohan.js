@@ -2,7 +2,7 @@ debugger;
 var numberOfPages = document.querySelector("td.specialtext:nth-child(2)").childNodes[0].nodeValue.match(/Pages \(\d+\)/)[0].match(/\d+/)[0];
 var randomPage = Math.floor(Math.random() * numberOfPages) + 1;
 
-var parser = new DOMParser()
+var parser = new DOMParser();
 var doc = parser.parseFromString(getRandomPage(), "text/xml");
 
 getRandomManga(doc);
