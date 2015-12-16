@@ -13,7 +13,7 @@ function getRandomPage() {
     if(resultURL.indexOf("?page=") > -1 || resultURL.indexOf("&page=") > -1 ) {
         resultURL = resultURL.replace(/page=\d+/, "page=" + randomPage);
     } else {
-        resultURL = resultURL + "&page=" + randomPage);
+        resultURL = resultURL + "&page=" + randomPage;
     }
 
     return httpGet(resultURL);
