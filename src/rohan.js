@@ -1,17 +1,21 @@
 debugger;
 
-{
-    var jqScript = document.createElement("script");
-    jqScript.src = "//code.jquery.com/jquery-1.11.3.min.js";
-    document.head.appendChild(jqScript);
-}
+var jqScript = document.createElement("script");
+jqScript.src = "//code.jquery.com/jquery-1.11.3.min.js";
+document.head.appendChild(jqScript);
 
-$.ajax({
-    url : getRandomPage(),
-    success : function(result){
-        getRandomManga(result);
+jqScript.onload = jqScript.onreadystatechange = function(){
+    if (!done && (!this.readyState || this.readyState == "loaded" || this.readyState == "complete")) {
+        done = true;
+        
+        $.ajax({
+            url : getRandomPage(),
+            success : function(result){
+                getRandomManga(result);
+            }
+        });
     }
-});
+};
 
 function getRandomPage() {
     var resultURL = window.location.href;
