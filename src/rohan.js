@@ -26,7 +26,10 @@ function getRandomPage() {
     return resultURL;
 }
 
-function getRandomManga(doc) {
+function getRandomManga(url) {
+    var parser = new DOMParser()
+    var doc = parser.parseFromString(url, "text/xml");
+
     var links = doc.querySelectorAll("a[alt='Series Info']");
     window.location.href = links[Math.floor((Math.random() * links.length))];
 }
