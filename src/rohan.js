@@ -1,5 +1,3 @@
-debugger;
-
 var jqScript = document.createElement("script");
 jqScript.src = "//code.jquery.com/jquery-1.11.3.min.js";
 document.head.appendChild(jqScript);
