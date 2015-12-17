@@ -9,11 +9,8 @@ jqScript.onload = jqScript.onreadystatechange = function(){
     if (!done && (!this.readyState || this.readyState == "loaded" || this.readyState == "complete")) {
         done = true;
         
-        $.get({
-            url : getRandomPage(),
-            success : function(result){
-                getRandomManga(result);
-            }
+        $.get(getRandomPage(), function(data) {
+            getRandomManga(data);
         });
     }
 };
@@ -35,7 +32,7 @@ function getRandomPage() {
 
 function getRandomManga(url) {
     var parser = new DOMParser()
-    var doc = parser.parseFromString(url, "text/xml");
+    var doc = parser.parseFromString(url, "text/html");
 
     var links = doc.querySelectorAll("a[alt='Series Info']");
     window.location.href = links[Math.floor((Math.random() * links.length))];
