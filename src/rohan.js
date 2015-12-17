@@ -9,12 +9,12 @@ jqScript.onload = jqScript.onreadystatechange = function(){
     if (!done && (!this.readyState || this.readyState == "loaded" || this.readyState == "complete")) {
         done = true;
         
-        $.ajax({
+        $.get({
             url : getRandomPage(),
             success : function(result){
                 getRandomManga(result);
             }
-    });
+        });
     }
 };
 
